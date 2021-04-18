@@ -21,6 +21,6 @@ node{
  
  stage ('Deploy Code') {
     echo " ####### Deploying Code #########"
-    bat "copy target\\helloWorld.war C:\\apache-tomcat-8.5.64\\webapps\\helloWorld.war\"
+    bat "copy target\\helloWorld.war C:\\apache-tomcat-8.5.64\\webapps\\helloWorld.war"
  } 
 }

@@ -1,13 +1,15 @@
 node{
 
- def tomcatWeb = 'C:\\apache-tomcat-8.5.64\\webapps\\'
+ def tomcatWeb = 'C:\\apache-tomcat-8.5.64\\webapps'
  def mvnHome = tool name: 'maven-3', type:'maven'
- 
+ def tomcatStatus = ''
  stage ('SCM CheckOut') {
+   echo " ####### CheckOut Code #########"
    git 'https://github.com/jona987/helloworld.git'
  }
  
  stage ('Build Stage') {
+ 	echo " ####### Building Code #########"
     bat "${mvnHome}/bin/mvn package"  
  }
  
@@ -18,6 +20,7 @@ node{
  }*/
  
  stage ('Deploy Code') {
-    bat "copy target\\helloWorld.war \"${tomcatWeb}\\jenkinswar.war\""
+    echo " ####### Deploying Code #########"
+    bat "copy target\\helloWorld.war \"${tomcatWeb}\\helloWorld.war\""
  } 
 }

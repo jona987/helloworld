@@ -13,11 +13,11 @@ node{
     bat "${mvnHome}/bin/mvn package"  
  }
  
- /*stage ('SONAR Analysis') {
+ stage ('SONAR Analysis') {
    withSonarQubeEnv('sonar-1'){
-     bat "${mvnHome}/bin/mvn sonar:sonar"
+     bat "C:\\apache-maven-3.5.4\\bin\\mvn sonar:sonar"
    }  
- }*/
+ }
  
  stage ('Deploy Code') {
     echo " ####### Deploying Code #########"
